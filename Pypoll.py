@@ -81,5 +81,6 @@ with open(file_to_save, 'w') as txt_file:
     
     # Save the winning candidate's results to the text file 
     txt_file.write(winning_candidate_summary)
+    
    
 
