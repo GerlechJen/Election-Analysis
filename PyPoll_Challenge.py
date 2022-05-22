@@ -1,12 +1,9 @@
-# -*- coding: UTF-8 -*-
-"""PyPoll Homework Challenge Solution."""
-
 # Add our dependencies.
 import csv
 import os
 
 # Add a variable to load a file from a path.
-file_to_load = os.path.join("..", "Resources", "election_results.csv")
+file_to_load = os.path.join("Resources", "election_results.csv")
 # Add a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -30,7 +27,8 @@ winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
 largest_county = ""
-largest_county_votes = 0
+largest_count = 0
+largest_percentage = 0
 
 
 
@@ -104,23 +102,35 @@ with open(file_to_save, "w") as txt_file:
         # 6b: Retrieve the county vote count.
         vote_count = county_votes[county]
 
+
         # 6c: Calculate the percentage of votes for the county.
         county_vote_percentage = (vote_count / total_votes)* 100
 
 
 
          # 6d: Print the county results to the terminal.
-        print(f"{county} has {county_vote_percentage}% of votes with a vote count of {vote_count}")
-
+        print(f"{county}: {county_vote_percentage:.1f}%  ({vote_count:,})")
+   
+    
          # 6e: Save the county votes to a text file.
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
+        if (vote_count > largest_count) and (county_vote_percentage > largest_percentage):
+             largest_county = county
+             largest_count = vote_count
+             largest_percentage = county_vote_percentage
+             
 
 
     # 7: Print the county with the largest turnout to the terminal.
-
+    largest_county_results = (
+        "\n-------------------------\n"
+        f'Largest County Turnout: {largest_county}\n'
+        "-------------------------\n")
+    print(largest_county_results)
 
     # 8: Save the county with the largest turnout to a text file.
+    txt_file.write(largest_county_results)
 
 
     # Save the final candidate vote count to the text file.
