@@ -18,8 +18,6 @@ candidate_votes = {}
 counties = []
 county_votes = {}
 
-
-
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
 winning_count = 0
@@ -29,8 +27,6 @@ winning_percentage = 0
 largest_county = ""
 largest_count = 0
 largest_percentage = 0
-
-
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -168,3 +164,4 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
+
