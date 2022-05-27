@@ -30,6 +30,11 @@ Denver county had 306,055 votes which represents 82.8%, and Arapahoe county had 
 
 - The winner of the election was Diana DeGette, who received 272,892 number of votes representing 73.8 % of total votes cast.
 
+
+## Chalenge Overview
+
+provide a description of the challenge here you can also add a description of your key findings 
+
 ## Election-Audit Summary 
 In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
 This code can be modified and used for any election.
@@ -45,11 +50,8 @@ The code can be modified by:
 
 
 
-## Summary 
 
-## Chalenge Overview
 
-provide a description of the challenge here 
 
-## Challenge Summary
-add a description of your key findings 
+
+
