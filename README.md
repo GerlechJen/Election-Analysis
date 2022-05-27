@@ -1,15 +1,19 @@
 # Election_Analysis
 ## Overview of Election Audit 
-I was to assist a Colorado Board of Elections employee in auditing the tabulated results for a recent Colorado local congressional election. I was tasked to: 
+I was to assist a Colorado Board of Elections employee in auditing the tabulated results for a recent Colorado local congressional election. Part of my task was to: 
 1. calculate the total number of votes cast. 
 2. get a complete list of candidates who received votes.
 3. calculate the total number of votes each candidate received.
 4. calculate the percentage of votes each candidate won.
 5. determine the winner of the election based on popular vote.
-The goal here is to automate the process using Python so that the code can be used to audit not only other congressional districts, but senatorial districts and local elections. In this project, some additional data has been requested of me to complete the audit. I will be providing additional data on:
-1.The voter turnout for each county
-2.The percentage of votes from each county out of the total count
-3.The county with the highest turnout
+
+The goal here is to automate the process using Python so that the code can be used to audit not only other congressional districts, but senatorial districts and local elections. 
+
+In this project, some additional data has been requested of me to complete the audit. I will be providing additional data on:
+1. the voter turnout for each county. 
+2. the percentage of votes from each county out of the total count.
+3. the county with the highest turnout.
+
 After the analysis, a vote count report will be generated to certify the election results.
 
 ## Resources 
@@ -18,9 +22,9 @@ After the analysis, a vote count report will be generated to certify the electio
 
 ## Chalenge Overview
 
-In carrying out this analysis, I began by initializing an empty county list called counties that would hold the names of the counties.I also initialized an empty dictionary called county_votes that would hold the county as the key and the votes cast for each county as the values.To hold the county name for the county with the largest turnout, I initiallized an empty string "largest_county". The variables "largest_count" and "largest_percentage" were initialized to hold the number of votes of the county that had the largest turnout and the percentage voter turnout of the county respectively.
+In carrying out this analysis, I began by initializing an empty county list called "counties" that would hold the names of the counties. I also initialized an empty dictionary called "county_votes" that would hold the county as the key and the votes cast for each county as the values. To hold the county name for the county with the largest turnout, I initiallized an empty string "largest_county". The variables "largest_count" and "largest_percentage" were initialized to hold the number of votes of the county that had the largest turnout and the percentage voter turnout of the county respectively.
 
-In the already created for loop, a script was created to get the county name from each row. A decision statement was created to check if the county name acquired using the for loop is already in the counties list. If the county is not in the list, it is added to the counties list. The code below shows how this was executed.
+In the already created for loop, a script was created to get the county name from each row. A decision statement was created to check if the county name acquired using the for loop is already in the counties list. If the county was not in the list, it was added to the counties list. The code below shows how this was executed.
 
 ``` python 
    if county_name not in counties:
@@ -28,7 +32,7 @@ In the already created for loop, a script was created to get the county name fro
 ```
 A script was then created that initializes the county vote to 0 to begin tracking the vote turnout of each county. Another script was created that adds a vote to the county’s vote count as all the rows are looped through.
 
-A repetition statement was written to get the county from the county_votes dictionary. A variable, vote_count was initialized to hold the county’s votes as they are retrieved from the county_votes dictionary. Another script was created to calculate the county’s votes as a percentage of the total votes. The procedures stated were executed using the code below:
+A repetition statement was written to get the county from the county_votes dictionary. A variable, "vote_count" was initialized to hold the county’s votes as they are retrieved from the county_votes dictionary. Another script was created to calculate the county’s votes as a percentage of the total votes. The procedures stated were executed using the code below:
 
 
 ``` python 
@@ -50,8 +54,15 @@ A script was written that saves each county, the county’s total votes, and the
         txt_file.write(county_detailed_results)
 ```
 
-Finally, a script that saves the county with the largest turnout was also written to the election_results.txt file. After the complete code was run, the image below shows the outcome as seen in the election_results.txt file:
-![image]("C:\Users\janno\Downloads\election_results_text_image.png")
+Finally, a script that saves the county with the largest turnout was also written to the election_results.txt file as seen below:
+
+``` python 
+   largest_county_results = (
+        "\n-------------------------\n"
+        f'Largest County Turnout: {largest_county}\n'
+        "-------------------------\n")
+    txt_file.write(largest_county_results)
+```
 
 ## Election-Audit Results 
 The analysis of the election showed that: 
