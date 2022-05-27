@@ -20,18 +20,38 @@ After the analysis, a vote count report will be generated to certify the electio
 
 In carrying out this analysis, I began by initializing an empty county list called counties that would hold the names of the counties.I also initialized an empty dictionary called county_votes that would hold the county as the key and the votes cast for each county as the values.To hold the county name for the county with the largest turnout, I initiallized an empty string "largest_county". The variables "largest_count" and "largest_percentage" were initialized to hold the number of votes of the county that had the largest turnout and the percentage voter turnout of the county respectively.
 
-In the already created for loop, a script was created to get the county name from each row. A decision statement was created to check if teh county name acquired using the for loop is already in the counties list using the code below:
+In the already created for loop, a script was created to get the county name from each row. A decision statement was created to check if the county name acquired using the for loop is already in the counties list. If the county is not in the list, it is added to the counties list. The code below shows how this was executed.
 
-provide a description of the challenge here you can also add a description of your key findings 
-also include a clearly written overview of your methodfs (this will help your audience understand what you did and what they might be able to do with the data you presented.)
-
-``` VBA
-    If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
-            
-             tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
-                
-    End If
+``` python 
+   if county_name not in counties:
+            counties.append(county_name)
 ```
+A script was then created that initializes the county vote to 0 to begin tracking the vote turnout of each county. Another script was created that adds a vote to the county’s vote count as all the rows are looped through.
+
+A repetition statement was written to get the county from the county_votes dictionary. A variable, vote_count was initialized to hold the county’s votes as they are retrieved from the county_votes dictionary. Another script was created to calculate the county’s votes as a percentage of the total votes. The procedures stated were executed using the code below:
+
+
+``` python 
+   for county in county_votes:
+        vote_count = county_votes[county]
+        county_vote_percentage = (vote_count / total_votes)* 100
+```
+
+A print statement was created to print the current county, its percentage of the total votes, and its total votes to the command line.
+
+A decision statement was created that determines the county with the largest vote count and then adds that county and its vote count to the largest_county and largest_count variables respectively.
+
+A print statement that prints out the county with the largest turnout was written. 
+
+A script was written that saves each county, the county’s total votes, and the county’s percentage of total votes to the election_results.txt file using the following code:
+
+``` python 
+   county_detailed_results = (f"{county}: {county_vote_percentage:.1f}%  ({vote_count:,})\n")
+        txt_file.write(county_detailed_results)
+```
+
+Finally, a script that saves the county with the largest turnout was also written to the election_results.txt file. After the complete code was run, the image below shows the outcome as seen in the election_results.txt file:
+![image]("C:\Users\janno\Downloads\election_results_text_image.png")
 
 ## Election-Audit Results 
 The analysis of the election showed that: 
