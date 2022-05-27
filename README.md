@@ -85,20 +85,6 @@ Denver county had 306,055 votes which represents 82.8%, and Arapahoe county had 
 ## Election-Audit Summary 
 To the election commission, I would like to make these proposals which will make it possible to use the code for any election. I will also include some recommendations that would enhance the presented election results.
 
-First of all, the Python Script can be refactored to accept generic csv files that are not hard coded named. A function could also be created to take in variables like county name and vote count and the code placed under the function. This would be very efficient as we wouldn't have to perform the same long steps for every election.
+First of all, the Python Script can be refactored to accept generic csv files that are not hard coded named. A function could also be created to take in variables like county name and vote count and the refactored code placed under the function. This would be very efficient as we wouldn't have to perform the same long steps for every election.
 
 In terms of enhancing the results of the election, a bar chart showing the counties and their voter turnout or the different candidates and their percentage of votes could be included. An additional touch would be a map of the colorado area with census data mapped over.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
